@@ -19,9 +19,6 @@ if (!array_key_exists("code", $_GET) || trim($_GET['code']) == "" || trim($_GET[
     $bgpost = new \Tracking\BgPostService();
 
     $tableData = $bgpost->track(trim($_GET['code']));
-    if (count($tableData) == 1 && $tableData[0]["status"] == \Tracking\BgPostService::EVENT_STATUS_WRONG_CODE) {
-        http_response_code(404);
-    }
 }
 
 echo json_encode($tableData);

@@ -26,6 +26,7 @@ class BgPostService
     const EVENT_STATUS_TRAVELING = "traveling";
     const EVENT_STATUS_ARRIVED = "arrived";
     const EVENT_STATUS_WRONG_CODE = "wrong_code";
+    const EVENT_STATUS_NO_DATA = "no_data";
 
     public function __construct()
     {
@@ -93,14 +94,18 @@ class BgPostService
 
     public function getStatus(string $eventType): string
     {
-        $status = "traveling";
+        $status = self::EVENT_STATUS_TRAVELING;
 
         if (trim($eventType) == "Пратката  e получена") {
-            $status = "arrived";
+            $status = self::EVENT_STATUS_ARRIVED;
         }
 
         if (trim($eventType) == "Грешен код на пратката") {
-            $status = "wrong_code";
+            $status = self::EVENT_STATUS_WRONG_CODE;
+        }
+
+        if (strpos(trim($eventType), "Пратката не подлежи на проследяване") !== false) {
+            $status = self::EVENT_STATUS_NO_DATA;
         }
 
         return $status;
