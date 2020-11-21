@@ -13,7 +13,6 @@ function dd($a)
     print_r($a);
 }
 if (!array_key_exists("code", $_POST) || trim($_POST['code']) == "") {
-    dd($_POST);
     die();
 }
 $bgpost = new \Tracking\BgPostService();
