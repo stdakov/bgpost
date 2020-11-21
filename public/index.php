@@ -13,7 +13,7 @@ function dd($a)
     print_r($a);
 }
 $tableData = [];
-if (!array_key_exists("code", $_GET) || trim($_GET['code']) == "" || trim($_GET['code']) == "{traking-number}") {
+if (!array_key_exists("code", $_GET) || trim($_GET['code']) == "" || trim($_GET['code']) == "(traking-number)") {
     http_response_code(404);
 } else {
     $bgpost = new \Tracking\BgPostService();
