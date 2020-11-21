@@ -1,0 +1,31 @@
+Options -Indexes
+Options +FollowSymLinks
+
+DirectoryIndex index.php
+<IfModule mod_rewrite.c>
+
+RewriteEngine On
+
+RewriteCond %{HTTPS} !on
+RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    RewriteEngine on
+    RewriteBase /
+
+#rewrite rule for index.php
+    RewriteCond %{THE_REQUEST} ^.*/index.php
+    RewriteRule ^index\.php/(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+    #work without index.php/controller_name/method
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php/$1 [QSA,L]
+
+
+    #RewriteRule 2_login.php index.php/$1 [L]
+</IfModule>
+<IfModule !mod_rewrite.c>
+    ErrorDocument 404 there is no mod_rewrite enabled
+</IfModule>
+
+#php_value post_max_size 100M
+#php_value upload_max_filesize 100M
