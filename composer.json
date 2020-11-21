@@ -1,0 +1,10 @@
+{
+  "require": {
+    "dimabdc/php-fast-simple-html-dom-parser": "^1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Tracking\\": "src/"
+    }
+  }
+}
