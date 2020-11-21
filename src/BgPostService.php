@@ -6,7 +6,7 @@ use FastSimpleHTMLDom\Document;
 
 class BgPostService
 {
-    protected $bgPostUrl = "http://www.bgpost.bg/IPSWebTracking/IPSWeb_item_events.asp?itemid=";
+    protected $bgPostUrl = "https://www.bgpost.bg/IPSWebTracking/IPSWeb_item_events.asp?itemid=";
     /** @var  Document */
     protected $dom;
 
