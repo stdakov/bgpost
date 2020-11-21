@@ -12,13 +12,13 @@ function dd($a)
     echo "<pre>";
     print_r($a);
 }
-if (!array_key_exists("code", $_POST) || trim($_POST['code']) == "") {
+if (!array_key_exists("code", $_GET) || trim($_GET['code']) == "") {
     http_response_code(404);
     die();
 }
 $bgpost = new \Tracking\BgPostService();
 
-$tableData = $bgpost->track(trim($_POST['code']));
+$tableData = $bgpost->track(trim($_GET['code']));
 if (count($tableData) == 1 && $tableData[0]["status"] == \Tracking\BgPostService::EVENT_STATUS_WRONG_CODE) {
     http_response_code(404);
 }
