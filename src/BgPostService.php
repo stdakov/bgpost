@@ -49,7 +49,7 @@ class BgPostService
             if ($tableBody != null && !is_array($tableBody)) {
                 $trs = $tableBody->find("tr")->getArrayCopy();
 
-                //$postInfo = array_shift($trs);
+                $postInfo = array_shift($trs);
                 $headers = array_shift($trs)->find("td")->getArrayCopy();
 
                 foreach ($trs as $tr) {
@@ -61,7 +61,6 @@ class BgPostService
                         }
                         $trData[$this->getIndexName(trim($headers[$key]->plaintext))] = trim($td->plaintext);
                     }
-
                     $trData[self::STATUS_JSON_LABEL] = $this->getStatus($trData[self::EVENT_JSON_LABEL]);
 
                     $tableData[] = $trData;

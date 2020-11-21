@@ -22,3 +22,80 @@ For example: **PS123456789A**, **PS004152151EN**, **PS610548787UA**, **PS0159758
 
 - Get package data:
   - GET https://bgpost.dakovdev.com/api/v1/?code=(tracking-number)
+
+Good response:
+
+```json
+[
+  {
+    "date": "09.08.2020   22:35",
+    "country": "SINGAPORE",
+    "location": "SINGAPORE SAL",
+    "event": "Insert item into bag (Otb) and Send item abroad",
+    "info": "",
+    "status": "traveling"
+  },
+  {
+    "date": "12.08.2020   22:35",
+    "country": "SINGAPORE",
+    "location": "SINGAPORE SAL",
+    "event": "Send item abroad (EDI-received)",
+    "info": "",
+    "status": "traveling"
+  },
+  {
+    "date": "31.08.2020   11:15",
+    "country": "BULGARIA",
+    "location": "SOFIA LC/AO",
+    "event": "Receive item at office of exchange (Inb)",
+    "info": "",
+    "status": "traveling"
+  },
+  {
+    "date": "31.08.2020   13:18",
+    "country": "BULGARIA",
+    "location": "SOFIA LC/AO",
+    "event": "Send item to domestic location (Inb)",
+    "info": "",
+    "status": "traveling"
+  },
+  {
+    "date": "11.09.2020   16:30",
+    "country": "BULGARIA",
+    "location": "IRM CC 1880",
+    "event": "Deliver item (Inb)",
+    "info": "",
+    "status": "traveling"
+  }
+]
+```
+
+Bad response (wrong or not supported tracking number):
+
+```json
+[
+  {
+    "date": "",
+    "country": "",
+    "location": "",
+    "event": "",
+    "info": "",
+    "status": "wrong_code"
+  }
+]
+```
+
+Bad response (missing information):
+
+```json
+[
+  {
+    "date": "",
+    "country": "",
+    "location": "",
+    "event": "",
+    "info": "",
+    "status": "no_data"
+  }
+]
+```
