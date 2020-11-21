@@ -38,34 +38,55 @@ class BgPostService
      */
     public function track(string $trackingNumber): array
     {
-        $this->dom = Document::file_get_html($this->bgPostUrl . $trackingNumber);
 
-        $tableBody = $this->dom->find('td.tabproperty')->find("tbody", 0);
         $tableData = [];
+        if (
+            preg_match('/^[R|C|E|V]{1}[A-Z]{1}\d{9}[A-Z]{2}$/', $trackingNumber) ||
+            preg_match('/^PS.{11}$/', $trackingNumber)
+        ) {
+            $this->dom = Document::file_get_html($this->bgPostUrl . $trackingNumber);
+            $tableBody = $this->dom->find('td.tabproperty')->find("tbody", 0);
+            if ($tableBody != null && !is_array($tableBody)) {
+                $trs = $tableBody->find("tr")->getArrayCopy();
 
-        if ($tableBody != null) {
-            $trs = $tableBody->find("tr")->getArrayCopy();
+                //$postInfo = array_shift($trs);
+                $headers = array_shift($trs)->find("td")->getArrayCopy();
 
-            $postInfo = array_shift($trs);
-            $headers = array_shift($trs)->find("td")->getArrayCopy();
-
-            foreach ($trs as $tr) {
-                $trData = [];
-                $tds = $tr->find("td");
-                foreach ($tds as $key => $td) {
-                    if (!array_key_exists($key, $headers)) {
-                        continue;
+                foreach ($trs as $tr) {
+                    $trData = [];
+                    $tds = $tr->find("td");
+                    foreach ($tds as $key => $td) {
+                        if (!array_key_exists($key, $headers)) {
+                            continue;
+                        }
+                        $trData[$this->getIndexName(trim($headers[$key]->plaintext))] = trim($td->plaintext);
                     }
-                    $trData[$this->getIndexName(trim($headers[$key]->plaintext))] = trim($td->plaintext);
+
+                    $trData[self::STATUS_JSON_LABEL] = $this->getStatus($trData[self::EVENT_JSON_LABEL]);
+
+                    $tableData[] = $trData;
                 }
-
-                $trData[self::STATUS_JSON_LABEL] = $this->getStatus($trData[self::EVENT_JSON_LABEL]);
-
-                $tableData[] = $trData;
+            } else {
+                $tableData[] = $this->getDummyData(self::EVENT_STATUS_NO_DATA);
             }
+        } else {
+            $tableData[] = $this->getDummyData(self::EVENT_STATUS_WRONG_CODE);
         }
 
+
+
         return $tableData;
+    }
+
+    public function getDummyData(string $status): array
+    {
+        $dummyEvent[self::DATE_JSON_LABEL] = "";
+        $dummyEvent[self::COUNTRY_JSON_LABEL] = "";
+        $dummyEvent[self::LOCATION_JSON_LABEL] = "";
+        $dummyEvent[self::EVENT_JSON_LABEL] = "";
+        $dummyEvent[self::INFO_JSON_LABEL] = "";
+        $dummyEvent[self::STATUS_JSON_LABEL] = $status;
+        return $dummyEvent;
     }
 
     public function getIndexName(string $tableLabel): string

@@ -9,16 +9,17 @@ header('Content-Type: application/json; charset=utf-8');
 
 function dd($a)
 {
-    echo "<pre>";
     print_r($a);
 }
 $tableData = [];
-if (!array_key_exists("code", $_GET) || trim($_GET['code']) == "" || trim($_GET['code']) == "(traking-number)") {
-    http_response_code(404);
-} else {
+
+if (array_key_exists("code", $_GET)) {
     $bgpost = new \Tracking\BgPostService();
 
     $tableData = $bgpost->track(trim($_GET['code']));
+} else {
+
+    http_response_code(404);
 }
 
 echo json_encode($tableData);
