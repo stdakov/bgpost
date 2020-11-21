@@ -21,7 +21,7 @@ For example: **PS123456789A**, **PS004152151EN**, **PS610548787UA**, **PS0159758
 ### RESTful URLs
 
 - Get package data:
-  - GET https://bgpost.dakovdev.com/api/v1/?code=(tracking-number)
+  - GET https://bgpost.dakovdev.com/api/v1/tracking?code=(tracking-number)
 
 Good response:
 
