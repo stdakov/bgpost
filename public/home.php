@@ -85,6 +85,17 @@
             </div>
         </div>
         <div>
+            Въведете в празното поле проследяващия номер на пратката, който съдържа: <br />
+
+            За международни пратки: <br />
+
+            13 символа: Първа буква <strong>R</strong>,<strong>С</strong>, <strong>Е</strong> или <strong>V</strong>, следва втора буква от <strong>A</strong> до <strong>Z</strong>, следват девет цифри, следват две букви с кода на държавата, от която е изпратена пратката. Например: <strong>RH054250664CN</strong>, <strong>CP004152151BG</strong>, <strong>EC610548787UA</strong>, <strong>VV015975882ES</strong>. <br />
+
+            За вътрешни пратки: <br />
+
+            Буквено-цифрова комбинация от тринадесет символа. Номерът започва с букви <strong>PS</strong>. <br />
+
+            На проследяване подлежат и пратки Ейвън. <br /> <br />
             <h2>API:</h2>
             <p>Това API използва "screen scraping" за парсване на информацията от Български пощи.</p>
             <pre>GET: https://bgpost.dakovdev.com/api/v1/tracking?code=<strong>tracking-number</strong></pre>
