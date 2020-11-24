@@ -1,7 +1,7 @@
 <?php
 require_once "../vendor/autoload.php";
 
-header('Content-Type: application/json; charset=utf-8');
+
 
 //ini_set('display_errors', 1);
 //ini_set('display_startup_errors', 1);
@@ -9,17 +9,22 @@ header('Content-Type: application/json; charset=utf-8');
 
 function dd($a)
 {
+    echo "<pre>";
     print_r($a);
+    die();
 }
-$tableData = [];
 
-if (array_key_exists("code", $_GET)) {
+if (strpos($_SERVER["REQUEST_URI"], '/api/v1/tracking') === 0 && array_key_exists("code", $_GET)) {
     $bgpost = new \Tracking\BgPostService();
 
-    $tableData = $bgpost->track(trim($_GET['code']));
+    $tableData = $bgpost->track(trim($_GET['code']));;
+
+    if (array_key_exists("filter", $_GET) && $_GET['filter'] == 'last' && count($tableData) > 0) {
+        $tableData = end($tableData);
+    }
+
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode($tableData);
 } else {
-
-    http_response_code(404);
+    require "home.php";
 }
-
-echo json_encode($tableData);
