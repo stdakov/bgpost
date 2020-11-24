@@ -48,6 +48,20 @@
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content="Проследяване на пратки по Български пощи, пратки от aliexpress, пратка по пощата, bgpost" />
 
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VQJ5L4HHEW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VQJ5L4HHEW');
+    </script>
+
 </head>
 
 <body>
