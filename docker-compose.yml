@@ -9,6 +9,7 @@ services:
       dockerfile: Dockerfile
     image: appimage
     container_name: app-php
+    restart: "on-failure"
     restart: unless-stopped
     working_dir: /var/www/
     volumes:
@@ -20,6 +21,7 @@ services:
     image: nginx:alpine
     container_name: app-nginx
     restart: unless-stopped
+    restart: "on-failure"
     ports:
       - 80:80
     volumes:
