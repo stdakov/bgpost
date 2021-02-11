@@ -66,123 +66,49 @@
         </div>
         <br>
         <div class="row justify-content-center">
-            <div class="col-auto">
-                <table class="table table-responsive">
-                    <thead>
-                        <tr>
-                            <th>№</th>
-                            <th>Проследяващ номер</th>
-                            <th>Статус</th>
-                            <th>Дата</th>
-                            <th>Продукт</th>
-                            <th>bgPost.bg</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody id="tracking-item-table">
+            <table class="table table-responsive table-hover">
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>Проследяващ номер</th>
+                        <th>Статус</th>
+                        <th>Дата</th>
+                        <th>Продукт</th>
+                        <th>bgPost.bg</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="tracking-item-table">
 
-                    </tbody>
-                </table>
+                </tbody>
+            </table>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                Въведете в празното поле проследяващия номер на пратката, който съдържа: <br />
+
+                За международни пратки: <br />
+
+                13 символа: Първа буква <strong>R</strong>,<strong>С</strong>, <strong>Е</strong> или <strong>V</strong>, следва втора буква от <strong>A</strong> до <strong>Z</strong>, следват девет цифри, следват две букви с кода на държавата, от която е изпратена пратката. Например: <strong>RH054250664CN</strong>, <strong>CP004152151BG</strong>, <strong>EC610548787UA</strong>, <strong>VV015975882ES</strong>. <br />
+
+                За вътрешни пратки: <br />
+
+                Буквено-цифрова комбинация от тринадесет символа. Номерът започва с букви <strong>PS</strong>. <br />
+
+                На проследяване подлежат и пратки Ейвън.
             </div>
         </div>
-        <div>
-            Въведете в празното поле проследяващия номер на пратката, който съдържа: <br />
-
-            За международни пратки: <br />
-
-            13 символа: Първа буква <strong>R</strong>,<strong>С</strong>, <strong>Е</strong> или <strong>V</strong>, следва втора буква от <strong>A</strong> до <strong>Z</strong>, следват девет цифри, следват две букви с кода на държавата, от която е изпратена пратката. Например: <strong>RH054250664CN</strong>, <strong>CP004152151BG</strong>, <strong>EC610548787UA</strong>, <strong>VV015975882ES</strong>. <br />
-
-            За вътрешни пратки: <br />
-
-            Буквено-цифрова комбинация от тринадесет символа. Номерът започва с букви <strong>PS</strong>. <br />
-
-            На проследяване подлежат и пратки Ейвън. <br /> <br />
-            <h2>API:</h2>
-            <p>Това API използва "screen scraping" за парсване на информацията от Български пощи.</p>
-            <pre>GET: https://bgpost.dakovdev.com/api/v1/tracking?code=<strong>tracking-number</strong></pre>
-            Резултат с данни:
-            <pre>
-[
-  {
-    "date": "09.08.2020   22:35",
-    "country": "SINGAPORE",
-    "location": "SINGAPORE SAL",
-    "event": "Insert item into bag (Otb) and Send item abroad",
-    "info": "",
-    "status": "traveling"
-  },
-  {
-    "date": "12.08.2020   22:35",
-    "country": "SINGAPORE",
-    "location": "SINGAPORE SAL",
-    "event": "Send item abroad (EDI-received)",
-    "info": "",
-    "status": "traveling"
-  },
-  {
-    "date": "31.08.2020   11:15",
-    "country": "BULGARIA",
-    "location": "SOFIA LC/AO",
-    "event": "Receive item at office of exchange (Inb)",
-    "info": "",
-    "status": "traveling"
-  },
-  {
-    "date": "31.08.2020   13:18",
-    "country": "BULGARIA",
-    "location": "SOFIA LC/AO",
-    "event": "Send item to domestic location (Inb)",
-    "info": "",
-    "status": "traveling"
-  },
-  {
-    "date": "11.09.2020   16:30",
-    "country": "BULGARIA",
-    "location": "IRM CC 1880",
-    "event": "Deliver item (Inb)",
-    "info": "",
-    "status": "traveling"
-  }
-]
-            </pre>
-            Резултат без данни:
-            <pre>
-[
-  {
-    "date": "",
-    "country": "",
-    "location": "",
-    "event": "",
-    "info": "",
-    "status": "no_data"
-  }
-]
-            </pre>
-            Резултат с грешен номер:
-            <pre>
-[
-  {
-    "date": "",
-    "country": "",
-    "location": "",
-    "event": "",
-    "info": "",
-    "status": "wrong_code"
-  }
-]
-            </pre>
-        </div>
+        <a class="" style="float: right;" href="/info.php">REST API</a>
+        <footer class="footer mt-auto py-3">
+            <div class="container">
+                <div class="row">
+                    <span class="text-muted">created by <a href="https://twitter.com/StanislavDakov" target="_blank">@StanislavDakov</a></span>
+                </div>
+                <br />
+            </div>
+        </footer>
     </div>
-    <footer class="footer mt-auto py-3">
-        <div class="container">
-            <div class="row">
-                <span class="text-muted">created by <a href="https://twitter.com/StanislavDakov" target="_blank">@StanislavDakov</a></span>
-                <span class="text-muted" style="float: right;">open source project at <a href="https://github.com/stdakov/bgpost" target="_blank">github</a></span>
 
-            </div>
-            <br />
-        </div>
-    </footer>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="/media/scripts.js"></script>
