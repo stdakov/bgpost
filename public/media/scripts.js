@@ -103,7 +103,6 @@ $(document).ready(function () {
       dataType: "json",
       success: function (data) {
         var tdProductLink = "-";
-
         if (trackingItem.link !== "") {
           tdProductLink =
             '<a title="към продукта" href=\'' +
@@ -154,6 +153,9 @@ $(document).ready(function () {
           "</td>\n" +
           '            <td class="tracking_number">' +
           trackingItem.number +
+          "</td>\n" +
+          "            <td>" +
+          data.location +
           "</td>\n" +
           '            <td class="track_status">' +
           trackEvent +

@@ -1,6 +1,23 @@
 <html class="no-js" xmlns="http://www.w3.org/1999/xhtml" lang="bg" prefix="og: http://ogp.me/ns#">
 
 <head>
+    <link rel="apple-touch-icon" sizes="57x57" href="/media/icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/media/icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/media/icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/media/icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/media/icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/media/icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/media/icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/media/icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/media/icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/media/icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/media/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/media/icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/media/icon/favicon-16x16.png">
+    <link rel="manifest" href="/media/icon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/media/icon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <!-- Bootstrap core CSS -->
     <link href="/media/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -72,6 +89,7 @@
                     <tr>
                         <th>№</th>
                         <th>Проследяващ номер</th>
+                        <th>Местонахождение</th>
                         <th>Статус</th>
                         <th>Дата</th>
                         <th>Продукт</th>
