@@ -80,13 +80,21 @@ $(document).ready(function () {
   $(document).on("click", ".remove", function (e) {
     e.preventDefault();
 
-    if (confirm("Изтрий пратката?")) {
-      var el = $(this);
-      var tr = $(this).parents(".table_item");
+    swal({
+      title: "Изтрий пратката?",
+      icon: "warning",
+      buttons: true,
+      buttons: ["Не", "Да"],
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        var el = $(this);
+        var tr = $(this).parents(".table_item");
 
-      LocalStorage.remove(tr.data("item-id"));
-      tr.remove();
-    }
+        LocalStorage.remove(tr.data("item-id"));
+        tr.remove();
+      }
+    });
   });
 
   function createElement(trackingItem) {
@@ -160,7 +168,7 @@ $(document).ready(function () {
           bgPostLink +
           "</td>\n" +
           "            <td>\n" +
-          "                <button title=\"изтрий проследяването\" class='remove'>x</button>\n" +
+          "                <button title=\"изтрий проследяването\" class='btn btn-danger remove'>x</button>\n" +
           "            </td>\n" +
           "        </tr>";
 

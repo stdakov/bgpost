@@ -62,7 +62,7 @@
             <form class="add-items form-inline" autocomplete="off">
                 <input type="text" class="form-control" id="tracking-item" placeholder="Номер на пратката">
                 <input type="text" class="form-control" id="tracking-item-link" placeholder="Линк към продукта">
-                <button class="add btn btn-sm btn-info" type="submit">Проследи</button>
+                <button class="add btn btn-sm btn-info" type="submit">Добави</button>
             </form>
         </div>
         <br>
@@ -112,6 +112,7 @@
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript" src="/media/scripts.js"></script>
 </body>
 
