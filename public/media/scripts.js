@@ -172,7 +172,7 @@ $(document).ready(function () {
           bgPostLink +
           "</td>\n" +
           "            <td>\n" +
-          "                <button title=\"изтрий проследяването\" class='btn btn-danger remove'>x</button>\n" +
+          "                <button title=\"изтрий проследяването\" class='btn btn-sm btn-danger remove'>x</button>\n" +
           "            </td>\n" +
           "        </tr>";
 
