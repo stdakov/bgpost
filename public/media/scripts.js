@@ -154,7 +154,9 @@ $(document).ready(function () {
           '            <td class="tracking_number">' +
           trackingItem.number +
           "</td>\n" +
-          "            <td>" +
+          "            <td>(" +
+          data.country +
+          ") " +
           data.location +
           "</td>\n" +
           '            <td class="track_status">' +
