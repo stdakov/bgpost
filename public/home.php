@@ -120,12 +120,14 @@
         <a class="" style="float: right;" href="/info.php">REST API</a><br />
         <footer class="footer mt-auto py-3">
             <div class="alert alert-info" role="alert">Това <strong>не</strong> е офециалния сайт на Български пощи! Този инструмент използва "screen scraping" за парсване на информацията от Български пощи. Идеята на инструментта е да се даде възмостност за добавяне на лист от поръчки, които искаме да следим едновременно.</div>
+            <?php /*
             <div class="container">
                 <div class="row">
                     <span class="text-muted">created by <a href="https://twitter.com/StanislavDakov" target="_blank">@StanislavDakov</a></span>
                 </div>
                 <br />
             </div>
+            */ ?>
         </footer>
     </div>
 
