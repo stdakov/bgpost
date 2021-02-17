@@ -19,7 +19,8 @@
     <meta name="msapplication-TileImage" content="/media/icon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <!-- Bootstrap core CSS -->
-    <link href="/media/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="/media/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="/media/table/css/footable.bootstrap.min.css" rel="stylesheet" />
     <style>
         table {
             border-collapse: collapse;
@@ -28,8 +29,12 @@
         table,
         td,
         th {
-            border: 1px solid black;
-            padding: 5px;
+            border: 2px solid #ddd;
+        }
+
+        table,
+        td {
+            font-size: 13px;
         }
 
         .tracking_completed .tracking_number {
@@ -55,6 +60,14 @@
         pre {
             color: black;
         }
+
+        .hide1 {
+            display: none;
+        }
+
+        .form-inline>* {
+            margin: 5px 3px;
+        }
     </style>
 
     <meta charset="utf-8" />
@@ -66,34 +79,33 @@
     <meta name="description" content="Проследяване на пратки по Български пощи, пратки от aliexpress, пратка по пощата." />
     <meta name="keywords" content="bgpost, bulgarski poshti, bulgarski poshti prosledqvane, bulgarski poshti tracking">
     <!-- <script async defer data-website-id="9103710f-b999-4e6f-a5ae-878b39506f19" src="https://stats.dakovdev.com/umami.js"></script> -->
-    <script async defer data-website-id="3243ddec-9423-4b7b-8fcc-94fe894f17f4" src="https://stats.dakovdev.com/umami.js"></script>
+    <!-- <script async defer data-website-id="3243ddec-9423-4b7b-8fcc-94fe894f17f4" src="https://stats.dakovdev.com/umami.js"></script> -->
 </head>
 
 <body>
     <div class="container">
-        <div class="page-header text-center">
-            <h1 class="mt-5">Проследяване на пратки по пощата - <a href="http://www.bgpost.bg/" target="_blank">bgPost.bg</a></h1>
+        <div class="page-header text-center d-print-none">
+            <h1 class="mt-5">Проследяване на пратки по пощата</h1>
             <p>Данните се пазят само при вас в local storage в browser-а</p>
         </div>
-        <div class="row text-center">
+        <div class="text-center">
             <form class="add-items form-inline" autocomplete="off">
                 <input type="text" class="form-control" id="tracking-item" placeholder="Номер на пратката">
                 <input type="text" class="form-control" id="tracking-item-link" placeholder="Линк към продукта">
-                <button class="add btn btn-sm btn-info" type="submit">Добави</button>
+                <button class="add btn btn-info" type="submit">Добави</button>
             </form>
         </div>
-        <br>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center hide1" id="table-box">
             <table class="table table-responsive table-hover">
                 <thead>
                     <tr>
-                        <th>№</th>
+                        <th data-breakpoints="xs">№</th>
                         <th>Проследяващ номер</th>
                         <th>Местонахождение</th>
-                        <th>Статус</th>
-                        <th>Дата</th>
-                        <th>Продукт</th>
-                        <th>bgPost.bg</th>
+                        <th data-breakpoints="xs">Статус</th>
+                        <th data-breakpoints="xs">Дата</th>
+                        <th data-breakpoints="xs sm">Продукт</th>
+                        <th data-breakpoints="xs sm">bgPost.bg</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -101,7 +113,12 @@
 
                 </tbody>
             </table>
+
+
+
         </div>
+
+        <div class="alert alert-success hide1" id="no_item_alert" role="alert">Нямате регистрирани пратки</div>
         <div class="panel panel-default">
             <div class="panel-body">
                 Въведете в празното поле проследяващия номер на пратката, който съдържа: <br />
@@ -134,6 +151,8 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="/media/moment.js"></script>
+    <script type="text/javascript" src="/media/table/js/footable.min.js"></script>
     <script type="text/javascript" src="/media/scripts.js"></script>
 </body>
 

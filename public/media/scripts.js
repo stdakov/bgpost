@@ -59,22 +59,34 @@ var LocalStorage = new (function () {
 $(document).ready(function () {
   LocalStorage.init("bgPostItems");
   var items = LocalStorage.getAll();
-
-  $.each(items, function (index, item) {
-    createElement(item);
-  });
+  if (items.length > 0) {
+    $.each(items, function (index, item) {
+      createElement(item);
+    });
+  } else {
+    $("#table-box").hide();
+    $("#no_item_alert").show();
+  }
 
   $(".add-items").submit(function (event) {
     event.preventDefault();
     var itemNum = $("#tracking-item").val();
     var itemLink = $("#tracking-item-link").val();
 
+    // if (
+    //   true ||
+    //   /^[R|r|C||c|E|e|V|v]{1}[a-zA-Z]{1}\d{9}[a-zA-Z]{2}$/.test(itemNum) ||
+    //   /^[P|p]{1}[S|s]{1}.{11}$$/.test(itemNum)
+    // ) {
     var trackingItem = LocalStorage.add(itemNum, itemLink, false);
 
     $("#tracking-item").val("");
     $("#tracking-item-link").val("");
 
     createElement(trackingItem);
+    // } else {
+    //   swal("Въведохте грешен номер!", "", "warning");
+    // }
   });
 
   $(document).on("click", ".remove", function (e) {
@@ -82,19 +94,35 @@ $(document).ready(function () {
 
     swal({
       title: "Изтрий пратката?",
-      icon: "warning",
+      icon: "error",
       buttons: true,
       buttons: ["Не", "Да"],
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
         var el = $(this);
+
         var tr = $(this).parents(".table_item");
+        var nextEl = tr.next();
+        if (nextEl.hasClass("footable-detail-row")) {
+          nextEl.remove();
+        }
 
         LocalStorage.remove(tr.data("item-id"));
         tr.remove();
       }
     });
+  });
+
+  $(document).on("click", "table tbody tr", function (e) {
+    //e.preventDefault();
+    // $("body")
+    //   .find("#tracking-item-table")
+    //   .find("tr")
+    //   .each(function (index) {
+    //     $(this).css("background-color", "#fff");
+    //   });
+    // $(this).css("background-color", "#e6e6e6");
   });
 
   function createElement(trackingItem) {
@@ -107,12 +135,12 @@ $(document).ready(function () {
           tdProductLink =
             '<a title="към продукта" href=\'' +
             trackingItem.link +
-            '\' target="_blank">link</a>';
+            '\' target="_blank">към продукта</a>';
         }
         var bgPostLink =
           '<a title="www.bgpost.bg" target="_blank" href="http://www.bgpost.bg/IPSWebTracking/IPSWeb_item_events.asp?itemid=' +
           trackingItem.number +
-          '">link</a>';
+          '">история</a>';
 
         var trackStatus = "tracking_no_info";
         var trackEvent = "Няма информация за пратката";
@@ -177,6 +205,9 @@ $(document).ready(function () {
           "        </tr>";
 
         table.append(element);
+        $(".table").footable();
+        $("#table-box").show();
+        $("#no_item_alert").hide();
       },
     });
   }
