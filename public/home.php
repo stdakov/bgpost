@@ -29,7 +29,7 @@
         table,
         td,
         th {
-            border: 2px solid #ddd;
+            border: 1px solid #ddd;
         }
 
         table,
