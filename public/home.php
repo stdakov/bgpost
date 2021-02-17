@@ -34,7 +34,7 @@
 
         table,
         td {
-            font-size: 13px;
+            font-size: 12.5px;
         }
 
         .tracking_completed .tracking_number {
