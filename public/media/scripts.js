@@ -133,9 +133,9 @@ $(document).ready(function () {
         var tdProductLink = "-";
         if (trackingItem.link !== "") {
           tdProductLink =
-            '<a title="към продукта" href=\'' +
+            '<a title="продукт" href=\'' +
             trackingItem.link +
-            '\' target="_blank">към продукта</a>';
+            '\' target="_blank">продукт</a>';
         }
         var bgPostLink =
           '<a title="www.bgpost.bg" target="_blank" href="http://www.bgpost.bg/IPSWebTracking/IPSWeb_item_events.asp?itemid=' +
