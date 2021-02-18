@@ -32,9 +32,14 @@
             border: 1px solid #ddd;
         }
 
-        table,
-        td {
-            font-size: 12px;
+
+
+        @media (max-width: 500px) {
+
+            table,
+            td {
+                font-size: 12px;
+            }
         }
 
         .tracking_completed .tracking_number {
