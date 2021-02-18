@@ -42,6 +42,10 @@
             }
         }
 
+        .item_num {
+            text-align: center;
+        }
+
         .tracking_completed .tracking_number {
             text-decoration: line-through;
         }
@@ -73,6 +77,10 @@
         .form-inline>* {
             margin: 5px 3px;
         }
+
+        .fooicon {
+            display: inline;
+        }
     </style>
 
     <meta charset="utf-8" />
@@ -103,7 +111,7 @@
             <table class="table table-responsive table-hover">
                 <thead>
                     <tr>
-                        <th data-breakpoints="xs">№</th>
+                        <th data-breakpoints="xs" style="text-align: center">№</th>
                         <th>Проследяващ номер</th>
                         <th>Местонахождение</th>
                         <th data-breakpoints="xs">Статус</th>
