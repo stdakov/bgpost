@@ -57,7 +57,7 @@
     <div>
       <div class="alert alert-info" role="alert">
         <p>Това API използва "screen scraping" за парсване на информацията от Български пощи.</p>
-        <pre>GET: https://bgpost.dakovdev.com/api/v1/tracking?code=<strong>tracking-number</strong></pre>
+        <pre>GET: https://bulgarskiposhti.com/api/v1/tracking?code=<strong>tracking-number</strong></pre>
       </div>
       Резултат с данни:
       <pre>
