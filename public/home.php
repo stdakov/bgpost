@@ -95,6 +95,8 @@
 </head>
 
 <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/bg_BG/sdk.js#xfbml=1&version=v9.0&appId=205328746537463" nonce="jI6ccGJ4"></script>
     <div class="container">
         <div class="page-header text-center d-print-none">
             <h1 class="mt-5">Проследяване на пратки по пощата</h1>
@@ -147,6 +149,7 @@
             </div>
         </div>
         <a class="" style="float: right;" href="/info.php">REST API</a><br />
+        <div class="fb-comments" data-href="https://bulgarskiposhti.com/" data-width="100%" data-numposts="5"></div>
         <footer class="footer mt-auto py-3">
             <div class="alert alert-info" role="alert">Това <strong>не</strong> е официалния сайт на Български пощи! Този инструмент използва "screen scraping" за парсване на информацията от Български пощи. Идеята на инструмента е да се даде възможност за добавяне на лист от поръчки, които искаме да следим едновременно.</div>
             <?php /*
