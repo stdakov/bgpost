@@ -110,7 +110,7 @@
             </form>
         </div>
         <div class="row justify-content-center hide1" id="table-box">
-            <table class="table table-responsive table-hover">
+            <table class="table table-responsive table-hover" data-expand-first="true">
                 <thead>
                     <tr>
                         <th data-breakpoints="xs" style="text-align: center">№</th>
