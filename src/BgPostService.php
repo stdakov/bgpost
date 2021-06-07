@@ -41,7 +41,7 @@ class BgPostService
 
         $tableData = [];
         if (
-            preg_match('/^[R|r|C||c|E|e|V|v]{1}[a-zA-Z]{1}\d{9}[a-zA-Z]{2}$/', $trackingNumber) ||
+            preg_match('/^[L|l|R|r|C||c|E|e|V|v]{1}[a-zA-Z]{1}\d{9}[a-zA-Z]{2}$/', $trackingNumber) ||
             preg_match('/^[P|p]{1}[S|s]{1}.{11}$$/', $trackingNumber)
         ) {
             $this->dom = Document::file_get_html($this->bgPostUrl . $trackingNumber);
