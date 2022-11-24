@@ -91,7 +91,7 @@
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content="Проследяване на пратки по Български пощи, пратки от aliexpress, пратка по пощата." />
     <meta name="keywords" content="bgpost, bulgarski poshti, bulgarski poshti prosledqvane, bulgarski poshti tracking">
-    <script async defer data-website-id="5ad04962-9d3b-48bf-b7dc-4e3a9fb556de" src="https://st.dakovdev.com/umami.js"></script>
+    <script async defer data-website-id="099c94a4-8d31-461e-8bb0-70ed348c50e7" src="https://st.dakovdev.com/umami.js"></script>
 </head>
 
 <body>
