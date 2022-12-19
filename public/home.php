@@ -149,7 +149,6 @@
             </div>
         </div>
         <a class="" style="float: right;" href="/info.php">REST API</a><br />
-        <div class="fb-comments" data-href="https://bulgarskiposhti.com/" data-width="100%" data-numposts="5"></div>
         <footer class="footer mt-auto py-3">
             <div class="alert alert-info" role="alert">Това <strong>не</strong> е официалния сайт на Български пощи! Този инструмент използва "screen scraping" за парсване на информацията от Български пощи. Идеята на инструмента е да се даде възможност за добавяне на лист от поръчки, които искаме да следим едновременно.</div>
             <?php /*
