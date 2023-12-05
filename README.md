@@ -29,7 +29,6 @@ Good response:
 [
   {
     "date": "09.08.2020   22:35",
-    "country": "SINGAPORE",
     "location": "SINGAPORE SAL",
     "event": "Insert item into bag (Otb) and Send item abroad",
     "info": "",
@@ -37,7 +36,6 @@ Good response:
   },
   {
     "date": "12.08.2020   22:35",
-    "country": "SINGAPORE",
     "location": "SINGAPORE SAL",
     "event": "Send item abroad (EDI-received)",
     "info": "",
@@ -45,7 +43,6 @@ Good response:
   },
   {
     "date": "31.08.2020   11:15",
-    "country": "BULGARIA",
     "location": "SOFIA LC/AO",
     "event": "Receive item at office of exchange (Inb)",
     "info": "",
@@ -53,7 +50,6 @@ Good response:
   },
   {
     "date": "31.08.2020   13:18",
-    "country": "BULGARIA",
     "location": "SOFIA LC/AO",
     "event": "Send item to domestic location (Inb)",
     "info": "",
@@ -61,7 +57,6 @@ Good response:
   },
   {
     "date": "11.09.2020   16:30",
-    "country": "BULGARIA",
     "location": "IRM CC 1880",
     "event": "Deliver item (Inb)",
     "info": "",
@@ -76,7 +71,6 @@ Bad response (wrong or not supported tracking number):
 [
   {
     "date": "",
-    "country": "",
     "location": "",
     "event": "",
     "info": "",

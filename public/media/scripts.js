@@ -137,10 +137,6 @@ $(document).ready(function () {
             trackingItem.link +
             '\' target="_blank">продукт</a>';
         }
-        var bgPostLink =
-          '<a title="www.bgpost.bg" target="_blank" href="http://www.bgpost.bg/IPSWebTracking/IPSWeb_item_events.asp?itemid=' +
-          trackingItem.number +
-          '">история</a>';
 
         var trackStatus = "tracking_no_info";
         var trackEvent = "Няма информация за пратката";
@@ -154,19 +150,6 @@ $(document).ready(function () {
           trackDate = data.date;
         }
 
-        if (typeof data.status !== "undefined") {
-          switch (data.status) {
-            case "arrived":
-              trackStatus = "tracking_completed";
-              break;
-            case "traveling_bg":
-              trackStatus = "tracking_in_bg";
-              break;
-            case "traveling":
-              trackStatus = "tracking_travel";
-              break;
-          }
-        }
 
         var table = $("body").find("#tracking-item-table");
         var itemNumber = table.find("tr").length + 1;
@@ -182,9 +165,7 @@ $(document).ready(function () {
           '            <td class="tracking_number">' +
           trackingItem.number +
           "</td>\n" +
-          "            <td>(" +
-          data.country +
-          ") " +
+          "            <td>" +
           data.location +
           "</td>\n" +
           '            <td class="track_status">' +
@@ -196,13 +177,16 @@ $(document).ready(function () {
           "            <td>" +
           tdProductLink +
           "</td>\n" +
-          "            <td>" +
-          bgPostLink +
-          "</td>\n" +
           '            <td style="text-align: center">\n' +
-          "                <button title=\"изтрий проследяването\" class='btn btn-sm btn-danger remove'>" +
-          '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16"><path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/><path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/></svg>' +
+          "                <button title=\"обнови проследяването\" class='btn btn-sm btn-info reload'>" +
+          '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">\n' +
+            '  <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>\n' +
+            '  <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>\n' +
+            '</svg>' +
           "</button>\n" +
+            "                <button title=\"изтрий проследяването\" class='btn btn-sm btn-danger remove'>" +
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16"><path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/><path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/></svg>' +
+            "</button>\n" +
           "            </td>\n" +
           "        </tr>";
 

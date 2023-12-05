@@ -50,20 +50,8 @@
             text-decoration: line-through;
         }
 
-        .tracking_completed .track_status {
-            background-color: #04f700;
-        }
-
-        .tracking_in_bg .track_status {
-            background-color: #7fe7ff66;
-        }
-
-        .tracking_travel .track_status {
-            background-color: #fff57f66;
-        }
-
-        .tracking_no_info .track_status {
-            background-color: #ff7f7f40;
+        .track_status {
+            background-color: #7cfcf840;
         }
 
         pre {
@@ -119,7 +107,6 @@
                         <th data-breakpoints="xs">Статус</th>
                         <th data-breakpoints="xs">Дата</th>
                         <th data-breakpoints="xs sm">Продукт</th>
-                        <th data-breakpoints="xs sm">bgPost.bg</th>
                         <th></th>
                     </tr>
                 </thead>
